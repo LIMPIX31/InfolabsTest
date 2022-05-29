@@ -1,0 +1,61 @@
+.node {
+  max-height: 28px;
+  overflow: hidden;
+  transition: all .8s cubic-bezier(0, 1, 0, 1) -.1s;
+
+  .parent {
+    height: 20px;
+    padding: 4px 15px;
+    font-family: Poppins, sans-serif;
+    color: white;
+    font-size: 16px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    box-sizing: content-box;
+    transition: inherit;
+    cursor: pointer;
+    margin-bottom: 5px;
+
+    .arrow {
+      opacity: 0;
+      width: 10px;
+      height: 10px;
+      mix-blend-mode: overlay;
+      transition: inherit;
+      filter: invert(1);
+    }
+
+    .hiddenArrow {
+      opacity: 1;
+    }
+  }
+
+  .subnodes {
+    transform-origin: top;
+    transition: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.lowActive {
+  color: rgb(148, 88, 224) !important;
+}
+
+.activeParent {
+  background-color: rgb(46, 34, 66);
+  color: rgb(148, 88, 224) !important;
+}
+
+.unfolded {
+  max-height: 9999px;
+  transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
+
+  .parent .arrow {
+    rotate: 90deg;
+  }
+}
